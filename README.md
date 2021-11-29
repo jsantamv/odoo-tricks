@@ -13,10 +13,12 @@
    `sudo wget http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb`
 
 3. `sudo apt-get install xfonts-75dpi` (si da error, ejecutad `sudo apt --fix-broken install`)
-4. #Instalamos los paquetes descargados (si da error, paso 5, sino paso 6)
+
+4. Instalamos los paquetes descargados (si da error, paso 5, sino paso 6)
    `sudo dpkg -i *.deb` 
 
-5. `sudo wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb`
+5. Continuamos con los siguientes
+   `sudo wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb`
 
    `sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb`
    `sudo add-apt-repository ppa:linuxuprising/libpng12`
