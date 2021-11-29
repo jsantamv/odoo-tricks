@@ -28,12 +28,14 @@
 6. `sudo npm install -g less less-plugin-clean-css`
 
 7. ## Configuracion del usuario de BD PostgreSQL
-   `sudo su - postgres` 
-   `createuser root -s`
-   `psql template1`
-   `alter role root with password 'odoo';`
-   `\q`
-   `exit` 
+   - Iniciar la base de datos: `sudo service postgresql start`  
+   - Verificamos que este arriba `sudo service postgresql start` 
+   - Cambiar al usuario de base de datos: `sudo su - postgres` 
+   - creamos un usuario root: `createuser root -s`
+   - Incializamos la base de datos tempalte1: `psql template1`
+   - cambiamos el password a root: `alter role root with password 'odoo';`
+   - salimos `\q`
+   - `exit` 
  
 8. Creamos el directorio odoo en la ruta donde vamos a hacer la instalación (típicamente opt/odoo ó /home/odoo)
    `sudo mkdir odoo`  este directorio es opcional cuando se clona se crea la carpeta.
