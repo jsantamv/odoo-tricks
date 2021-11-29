@@ -29,7 +29,7 @@
 
 7. ## Configuracion del usuario de BD PostgreSQL
    - Iniciar la base de datos: `sudo service postgresql start`  
-   - Verificamos que este arriba `sudo service postgresql start` 
+   - Verificamos que este arriba `sudo netstat -nlp | grep 5432` 
    - Cambiar al usuario de base de datos: `sudo su - postgres` 
    - creamos un usuario root: `createuser root -s`
    - Incializamos la base de datos tempalte1: `psql template1`
@@ -38,18 +38,39 @@
    - `exit` 
  
 8. Creamos el directorio odoo en la ruta donde vamos a hacer la instalación (típicamente opt/odoo ó /home/odoo)
-   `sudo mkdir odoo`  este directorio es opcional cuando se clona se crea la carpeta.
-   `cd odoo`
-   `git clone https://github.com/odoo/odoo.git --branch 13.0 --single-branch --depth 1`
+   - este directorio es opcional cuando se clona se crea:  `sudo mkdir odoo`  
+   - la carpeta. `cd odoo`
+   - `git clone https://github.com/odoo/odoo.git --branch 13.0 --single-branch --depth 1`
 
 9. `cd odoo/`
 
-10. si da errores el paquete psycho ejecutamos sudo apt-get install --reinstall libpq-dev
-   `sudo pip3 install -r requirements.txt` 
+10. `sudo pip3 install -r requirements.txt` 
+   - si da errores el paquete psycho ejecutamos `sudo apt-get install --reinstall libpq-dev`
 
 11. `cd doc/`
 
 12. `sudo pip3 install -r requirements.txt` 
 
-13. `sudo ./odoo-bin -c odoo.conf -d datatest -i base`
+13. Creamos una carpeta para la personalizacion de los addons customizados en la raiz del proyecto
+   `mkdir custom_addons`
+
+14. Debemos de crear un odoo.confg:
+   `[options]`
+   `admin_passwd = odoo`
+   `db_host = localhost`
+   `db_port = 5432`
+   `db_user = root`
+   `db_password = odoo`
+   `addons_path = /mnt/e/odoo-pos/odoo/custom_addons`
+
+15. ODOO v14, Verificar que tengamos los siguientes paquetes
+   - Para la version python3 `sudo apt-get install python3-pypdf2`
+   - check requirements.txt which is under your odoo version and install the version mentioned there `sudo pip3 install Werkzeug==0.16.1`
+   - Validar que tengamos el psycopg2 instalado ORM para Postgress
+      - `sudo apt-get install libpq-dev`
+      - `pip install psycopg2`
+      - `sudo apt-get install build-dep python-psycopg2`
+      - `pip3 install psycopg2`
+
+16. `sudo ./odoo-bin -c odoo.conf -d datatest -i base`
 
