@@ -72,5 +72,11 @@
       - `sudo apt-get install build-dep python-psycopg2`
       - `pip3 install psycopg2`
 
-16. `sudo ./odoo-bin -c odoo.conf -d datatest -i base`
+16. Iniciamos el servidor
+   - Iniciar la base de datos: `sudo service postgresql start`  
+   - Verificamos que este arriba `sudo netstat -nlp | grep 5432` 
+   - `sudo ./odoo-bin -c odoo.conf -d datatest -i base`
+
+17. http://localhost:8069
+
 
