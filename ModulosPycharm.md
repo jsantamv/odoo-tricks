@@ -3,6 +3,9 @@
 Cuando se crea un nuevo proyecto, en PYCharm, debemos de agregar la configuracion 
 `-c odoo.conf -d datatest --dev=all` esto es para utilice la base de datos datatest y en modo desarrollo para debuguear
 
+
+![Interpreter](img\odooEvnv.png)
+
 # Modulos en ODOO
 
 Podeis consultar todos los atributos a especificar en el archivo __manifest__.py a través del siguiente enlace:
