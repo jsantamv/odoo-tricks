@@ -13,7 +13,7 @@
 
 `CTRL`+`SHIFT`+ `P`
 
-![Interpreter](img\sel_interpreter.png)
+![Interpreter](https://github.com/jsantamv/odoo-tricks/blob/main/img/sel_interpreter.png)
 
 
 
