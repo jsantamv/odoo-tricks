@@ -37,21 +37,6 @@
    - salimos `\q`
    - `exit` 
 
-   ### para crear un usuario
-   `# Conectarse a base de datos
-sudo -u postgres psql
-
-# Crear un usuario de base de datos.
-
-sudo -u postgres createuser --interactive
-
-# Creamos la base de datos.
-sudo -u postgres createdb odoo13
-
-# Nos conectamos con el nuevo usuario
-sudo -u odoo13 psql
-
-alter role odoo13 with password 'odoo13';`
  
 8. Creamos el directorio odoo en la ruta donde vamos a hacer la instalación (típicamente opt/odoo ó /home/odoo)
    - este directorio es opcional cuando se clona se crea:  `sudo mkdir odoo`  
